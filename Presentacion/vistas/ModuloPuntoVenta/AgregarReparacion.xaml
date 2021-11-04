@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="Presentacion.vistas.ModuloPuntoVenta.AgregarReparacion"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Presentacion.vistas.ModuloPuntoVenta"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <Grid Margin="365,58,-344,-47">
+            <TextBox x:Name="txt_observacion" HorizontalAlignment="Left" Height="59" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" Margin="201,79,0,0"/>
+            <ComboBox x:Name="cmb_medioPago" HorizontalAlignment="Left" VerticalAlignment="Top" Width="163" Margin="201,142,0,0"/>
+            <TextBox x:Name="txt_monto" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" Margin="201,168,0,0"/>
+            <Label Content="REPARACION" HorizontalAlignment="Left" Margin="181,34,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="13"/>
+            <Label Content="OBSERVACION" HorizontalAlignment="Left" Margin="102,78,0,0" VerticalAlignment="Top"/>
+            <Label Content="TOTAL A PAGAR" HorizontalAlignment="Left" Margin="102,166,0,0" VerticalAlignment="Top" Width="98"/>
+            <Label Content="MEDIO DE PAGO" HorizontalAlignment="Left" Margin="102,140,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="btn_confirmar" Content="CONFIRMAR" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Margin="116,230,0,0" Click="btn_confirmar_Click" Height="28"/>
+            <Button x:Name="btn_cancelar" Content="CANCELAR" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Margin="247,230,0,0" Click="btn_cancelar_Click" Height="28"/>
+        </Grid>
+    </Grid>
+</UserControl>

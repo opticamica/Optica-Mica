@@ -1,0 +1,29 @@
+﻿<mah:MetroWindow x:Class="Presentacion.aplicacion.moduloInventario.AgregarMontura"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:Presentacion.aplicacion.moduloInventario"
+        mc:Ignorable="d"
+        Title="AgregarMontura" Height="343.5" Width="692" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,5,1">
+
+        <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Height="23" Margin="83,257,0,0" VerticalAlignment="Top" Width="117" Click="btn_guardar_Click"/>
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Height="23" Margin="270,257,0,0" VerticalAlignment="Top" Width="117"/>
+        <TextBox x:Name="txt_codMontura" HorizontalAlignment="Left" Height="23" Margin="243,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126"/>
+        <TextBox x:Name="txt_color" HorizontalAlignment="Left" Height="23" Margin="243,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126"/>
+        <Label Content="CODIGO MONTURA" HorizontalAlignment="Left" Margin="77,43,0,0" VerticalAlignment="Top" Height="24" Width="120"/>
+        <Label Content="COLOR" HorizontalAlignment="Left" Margin="77,75,0,0" VerticalAlignment="Top" Height="24" Width="106"/>
+        <Label Content="TIPO MONTURA" HorizontalAlignment="Left" Margin="77,107,0,0" VerticalAlignment="Top" Height="24" Width="106"/>
+        <Label Content="CANTIDAD" HorizontalAlignment="Left" Margin="77,167,0,0" VerticalAlignment="Top" Height="24" Width="106"/>
+        <ComboBox x:Name="cmb_tipoMontura" HorizontalAlignment="Left" Height="22" Margin="243,110,0,0" VerticalAlignment="Top" Width="128"/>
+        <TextBox x:Name="txt_stock" HorizontalAlignment="Left" Height="23" Margin="243,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" PreviewTextInput="txt_stock_PreviewTextInput"/>
+        <ComboBox x:Name="cmb_proveedor" HorizontalAlignment="Left" Height="22" Margin="243,202,0,0" VerticalAlignment="Top" Width="128"/>
+
+        <Button x:Name="btn_guardar_Copy" Content="FOTO" HorizontalAlignment="Left" Height="24" Margin="407,204,0,0" VerticalAlignment="Top" Width="223" Click="btn_guardar_Copy_Click"/>
+        <Image x:Name="img_montura" HorizontalAlignment="Left" Height="160" Margin="409,40,0,0" VerticalAlignment="Top" Width="219"/>
+        <Label Content="PROVEEDOR" HorizontalAlignment="Left" Margin="76,200,0,0" VerticalAlignment="Top" Height="24" Width="106"/>
+
+    </Grid>
+</mah:MetroWindow>

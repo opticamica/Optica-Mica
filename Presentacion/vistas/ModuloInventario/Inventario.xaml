@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="Presentacion.vistas.ModuloInventario.Inventario"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Presentacion.vistas.ModuloInventario"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White" Margin="0,0,-424,-238">
+        <Grid Margin="3,2,0,11">
+            <Rectangle x:Name="rct_cristal" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="256" Margin="4,374,0,0" Stroke="Black"  VerticalAlignment="Top" Width="320"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="234" Margin="559,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="257" Margin="328,373,0,0" Stroke="Black" VerticalAlignment="Top" Width="786"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="234" Margin="799,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="316"/>
+
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="234" Margin="0,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="551"/>
+            <DataGrid x:Name="dtg_montura"  IsReadOnly="True" HorizontalAlignment="Left" Height="223" Margin="7,43,0,0" VerticalAlignment="Top" Width="536" Loaded="dtg_montura_Loaded" SelectionChanged="dtg_montura_SelectionChanged"/>
+            <DataGrid x:Name="dtg_Cristal" IsReadOnly="True" HorizontalAlignment="Left" Height="244" Margin="335,380,0,0" VerticalAlignment="Top" Width="772" Loaded="dtg_Cristal_Loaded" LoadingRow="dtg_Cristal_LoadingRow" />
+            <Image x:Name="img_montura"  HorizontalAlignment="Left" Height="204" Margin="564,55,0,0" VerticalAlignment="Top" Width="221" RenderTransformOrigin="1.488,0.863"/>
+            <Button x:Name="btn_cargarImagen" Content="AGREGAR STOCK" HorizontalAlignment="Left" Height="40" Margin="391,283,0,0" VerticalAlignment="Top" Width="157" Click="btn_cargarImagen_Click" FontSize="12"  />
+
+
+            <StackPanel HorizontalAlignment="Left" Height="375" Margin="-74,301,0,0" VerticalAlignment="Top" Width="566">
+                <Grid Height="316" Margin="0,0,94,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="57*"/>
+                        <ColumnDefinition Width="329*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="MATERIAL" HorizontalAlignment="Left" Height="28" Margin="30,75,0,0" VerticalAlignment="Top" Width="134" Grid.Column="1"/>
+                    <Label Content="FILTRO" HorizontalAlignment="Left" Height="28" Margin="30,102,0,0" VerticalAlignment="Top" Width="134" Grid.Column="1"/>
+                    <Label Content="TIPO DE CRISTAL" HorizontalAlignment="Left" Height="28" Margin="30,175,0,0" VerticalAlignment="Top" Width="134" Grid.Column="1"/>
+                    <Label Content="ESFERA" HorizontalAlignment="Left" Height="28" Margin="30,199,0,0" VerticalAlignment="Top" Width="134" Grid.Column="1"/>
+                    <Label Content="CILINDRO" HorizontalAlignment="Left" Height="28" Margin="30,223,0,0" VerticalAlignment="Top" Width="134" Grid.Column="1"/>
+                    <Label Content="CANTIDAD" HorizontalAlignment="Left" Height="28" Margin="30,273,0,0" VerticalAlignment="Top" Width="134" Grid.Column="1"/>
+                    <ComboBox x:Name="cmb_material" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="142,77,0,0" Grid.Column="1" Height="22" SelectionChanged="cmb_material_SelectionChanged"/>
+                    <CheckBox x:Name="chk_azul" Content="Filtro Azul" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="142,107,0,0" Grid.Column="1" Height="15" Width="73"/>
+                    <CheckBox x:Name="chk_fotocromatico" Content="Fotocromatico" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="219,107,0,0" Grid.Column="1" Height="15" Width="97" Click="chk_fotocromatico_Click"/>
+                    <CheckBox x:Name="chk_blanco" Content="Blanco" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="142,132,0,0" Grid.Column="1" Height="15" Width="75" Click="chk_blanco_Click"  />
+                    <CheckBox x:Name="chk_capa" Content="Capa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="219,132,0,0" Grid.Column="1" Height="15" Width="68" Click="chk_capa_Click"/>
+
+                    <ComboBox x:Name="cmb_tipo_lente" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="142,177,0,0" Grid.Column="1" Height="22" SelectionChanged="cmb_tipo_lente_SelectionChanged"/>
+                    <ComboBox x:Name="cmb_colorFoto" Visibility="Hidden" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="142,153,0,0" Grid.Column="1" Height="22" SelectionChanged="cmb_tipo_lente_SelectionChanged"/>
+                    <TextBox x:Name="txt_esfera" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="142,201,0,0" Grid.Column="1" PreviewTextInput="txt_esfera_PreviewTextInput" PreviewLostKeyboardFocus="txt_esfera_PreviewLostKeyboardFocus"/>
+                    <TextBox x:Name="txt_cilindro" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="142,225,0,0" Grid.Column="1" PreviewTextInput="txt_cilindro_PreviewTextInput" PreviewLostKeyboardFocus="txt_cilindro_PreviewLostKeyboardFocus"/>
+                    <TextBox x:Name="txt_add" Visibility="Hidden" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="142,249,0,0" Grid.Column="1" PreviewTextInput="txt_cilindro_PreviewTextInput" PreviewLostKeyboardFocus="txt_cilindro_PreviewLostKeyboardFocus"/>
+
+                    <TextBox x:Name="txt_stock" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="142,275,0,0" Grid.Column="1" PreviewTextInput="txt_stock_PreviewTextInput_1"/>
+                    <ComboBox x:Name="cmb_proveedor" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="142,300,0,-6" Grid.Column="1" Height="22"/>
+                    <TextBox x:Name="txt_codCristal" Visibility="Hidden" IsEnabled="False" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="132,277,0,0" Grid.Column="1"/>
+                    <Label Content="CODIGO DE CRISTAL" Visibility="Hidden" HorizontalAlignment="Left" Height="28" Margin="6,274,0,0" VerticalAlignment="Top" Width="134" Grid.Column="1"/>
+                    <Label Content="PROVEEDOR" HorizontalAlignment="Left" Height="28" Margin="30,296,0,-8" VerticalAlignment="Top" Width="134" Grid.Column="1"/>
+                    <Label Content="COLOR" x:Name="lbl_color" Visibility="Hidden" HorizontalAlignment="Left" Height="28" Margin="30,151,0,0" VerticalAlignment="Top" Width="134" Grid.Column="1"/>
+                    <Label Content="ADD" x:Name="lbl_add" Visibility="Hidden" HorizontalAlignment="Left" Height="28" Margin="30,247,0,0" VerticalAlignment="Top" Width="134" Grid.Column="1"/>
+
+                </Grid>
+            </StackPanel>
+            <Label Content="CRISTALES" HorizontalAlignment="Left" Height="28" Margin="377,337,0,0" VerticalAlignment="Top" Width="217" FontSize="16" FontFamily="Segoe UI Black"/>
+            <Label Content="MONTURAS" HorizontalAlignment="Left" Height="28" Margin="209,7,0,0" VerticalAlignment="Top" Width="105" FontSize="16" FontFamily="Segoe UI Black"/>
+            <Label Content="AGREGAR CRISTAL" HorizontalAlignment="Left" Height="28" Margin="61,337,0,0" VerticalAlignment="Top" Width="160" FontSize="16" FontFamily="Segoe UI Black"/>
+            <Button x:Name="btn_agregarCristal" Content="AGREGAR CRISTAL" HorizontalAlignment="Left" Height="33" Margin="90,635,0,0" VerticalAlignment="Top" Width="155" Click="btn_agregarCristal_Click" FontSize="14" />
+
+            <Button x:Name="btn_buscarCristal" Content="BUSCAR CRISTAL" HorizontalAlignment="Left" Height="34" Margin="331,633,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.287,0" FontSize="14" Click="btn_buscarCristal_Click"  />
+            <Button x:Name="btn_limpiar" Content="LIMPIAR" HorizontalAlignment="Left" Height="36" Margin="476,633,0,0" VerticalAlignment="Top" Width="100" Click="btn_limpiar_Click" FontSize="14" />
+            <Grid HorizontalAlignment="Left" Height="286" Margin="799,33,0,0" VerticalAlignment="Top" Width="320">
+                <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Height="21" Margin="177,209,0,0" VerticalAlignment="Top" Width="129" Click="btn_guardar_Click"/>
+                <TextBox x:Name="txt_codMontura" HorizontalAlignment="Left" Height="23" Margin="177,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126"/>
+                <TextBox x:Name="txt_color" HorizontalAlignment="Left" Height="23" Margin="177,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126"/>
+                <Label Content="CODIGO MONTURA" HorizontalAlignment="Left" Margin="11,17,0,0" VerticalAlignment="Top" Height="24" Width="120"/>
+                <Label Content="COLOR" HorizontalAlignment="Left" Margin="11,49,0,0" VerticalAlignment="Top" Height="24" Width="106"/>
+                <Label Content="TIPO MONTURA" HorizontalAlignment="Left" Margin="11,81,0,0" VerticalAlignment="Top" Height="24" Width="106"/>
+                <Label Content="CANTIDAD" HorizontalAlignment="Left" Margin="11,111,0,0" VerticalAlignment="Top" Height="24" Width="106"/>
+                <ComboBox x:Name="cmb_tipoMontura" HorizontalAlignment="Left" Height="22" Margin="177,84,0,0" VerticalAlignment="Top" Width="128"/>
+                <TextBox x:Name="txt_cantidad" HorizontalAlignment="Left" Height="23" Margin="177,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" PreviewTextInput="txt_stock_PreviewTextInput"/>
+                <ComboBox x:Name="cmb_proveedorMontura" HorizontalAlignment="Left" Height="22" Margin="177,146,0,0" VerticalAlignment="Top" Width="128"/>
+
+                <Button x:Name="btn_guardar_Copy" Content="FOTO" HorizontalAlignment="Left" Height="39" Margin="-187,252,0,-5" VerticalAlignment="Top" Width="135" Click="btn_guardar_Copy_Click" FontSize="12"/>
+                <Label Content="PROVEEDOR" HorizontalAlignment="Left" Margin="10,144,0,0" VerticalAlignment="Top" Height="24" Width="106"/>
+
+            </Grid>
+            <Label Content="AGREGAR MONTURA" HorizontalAlignment="Left" Height="28" Margin="801,7,0,0" VerticalAlignment="Top" Width="190" FontSize="16" FontFamily="Segoe UI Black"/>
+            <Button x:Name="btn_buscarMontura" Content="BUSCAR MONTURA" HorizontalAlignment="Left" Height="40" Margin="234,283,0,0" VerticalAlignment="Top" Width="147"  RenderTransformOrigin="0.287,0" FontSize="12" Click="btn_buscarMontura_Click"  />
+        </Grid>
+    </Grid>
+</UserControl>
